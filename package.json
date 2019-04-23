@@ -8,7 +8,11 @@
   "license": "GPLv3",
   "private": false,
   "dependencies": {
+    "@iarna/toml": "^2.2.3",
     "commander": "^2.20.0",
     "shelljs": "^0.8.3"
+  },
+  "bin": {
+    "reqs": "./index.js"
   }
 }
