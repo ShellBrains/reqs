@@ -1,0 +1,14 @@
+{
+  "name": "reqs",
+  "version": "0.0.1",
+  "description": "Shell command to check fiel and status requirements for the current folder",
+  "main": "index.js",
+  "repository": "https://github.com/ShellBrains/reqs.git",
+  "author": "Christian Maioli (@amazedcoder) <mmchristian@gmail.com>",
+  "license": "GPLv3",
+  "private": false,
+  "dependencies": {
+    "commander": "^2.20.0",
+    "shelljs": "^0.8.3"
+  }
+}
