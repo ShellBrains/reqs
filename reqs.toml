@@ -1,5 +1,7 @@
 [imports]
-parent = "wordpress"
+#parent = "wordpress"
 
-[requirements]
-files = ["package.json"]
+[files]
+readable = ["package.json"]
+owner_writeable = ["README.md"]
+all_writeable = ["yarn.lock"]
