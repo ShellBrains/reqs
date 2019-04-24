@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const sh = require('shelljs');
 const fs = require('fs');
 const TOML = require('@iarna/toml');
