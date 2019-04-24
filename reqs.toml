@@ -2,6 +2,5 @@
 #parent = "wordpress"
 
 [files]
-readable = ["package.json"]
-owner_writeable = ["README.md"]
-all_writeable = ["yarn.lock"]
+readable = ["wp-config.php"]
+writeable = ["node_modules/.bin"]
