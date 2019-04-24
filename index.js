@@ -4,8 +4,7 @@ const TOML = require('@iarna/toml');
 
 const CONFIG_PATH = 'reqs.toml';
 
-var isConfig = fs.existsSync(CONFIG_PATH);
-const results = [];
+const isConfig = fs.existsSync(CONFIG_PATH);
 
 if (isConfig) {
   const config = TOML.parse(fs.readFileSync(CONFIG_PATH));
@@ -18,9 +17,15 @@ if (isConfig) {
   if (files.writeable) {
     files.writeable.forEach(checkWriteable);
   }
+  if (config.commands) {
+    Object.values(config.commands).forEach(function (commandReqs) {
+      checkCommand(commandReqs.command, commandReqs.outputs);
+    });
+  }
 } else {
   logStatus(false, 'Configuration not found');
 }
+
 
 function logStatus (check, text) {
   const green = '\033[32m';
@@ -46,4 +51,10 @@ function checkWriteable (f) {
     var writeable = false;
   }
   logStatus(writeable, 'Path ' + f + ' is ' + (!writeable ? 'not ' : '') + 'writeable');
+}
+
+function checkCommand (command, mustOutput) {
+  const output = sh.exec(command, { silent: true }).stdout;
+  const result = output && output.includes(mustOutput);
+  logStatus(result, 'Command "' + command + '" ' + (!result ? 'does not output' : 'outputs') + ' "' + mustOutput + '"');
 }

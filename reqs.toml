@@ -3,4 +3,8 @@
 
 [files]
 readable = ["wp-config.php"]
-writeable = ["node_modules/.bin"]
+writeable = ["wp-content/cache"]
+
+[commands.grep]
+command = "grep 'test' *"
+outputs = "test"
