@@ -1,5 +1,5 @@
 {
-  "name": "reqs",
+  "name": "@shellbrains/reqs",
   "version": "0.0.1",
   "description": "Shell command to check fiel and status requirements for the current folder",
   "main": "index.js",
